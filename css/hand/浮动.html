@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        header,
+        footer {
+            width: 100%;
+            height: 50px;
+            background-color: blue;
+        }
+
+        .left {
+            float: left;
+            width: 200px;
+            height: calc(100vh - 100px);
+            background-color: blueviolet;
+        }
+
+        .right {
+            float: right;
+            width: 200px;
+            height: calc(100vh - 100px);
+            background-color: blueviolet;
+        }
+
+        .main {
+            display: inline-block;
+            width: calc(100% - 400px);
+            height: calc(100vh - 100px);
+            background-color: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <div id='app'>
+        <header>头部</header>
+        <div class="left">左侧</div>
+        <div class="main">
+            <ul>
+                <li><a href='https://bilibili'>ddddd</a></li>
+                <li><a href='https://bilibili'>ddddd</a></li>
+                <li><a href='https://bilibili'>ddddd</a></li>
+                <br>
+                <li><a href='https://bilibili'>ddddd</a></li>
+                <li><a href='https://bilibili'>ddddd</a></li>
+            </ul>
+        </div>
+        <div class="right">右侧</div>
+        <footer>尾部</footer>
+    </div>
+
+    <script>
+        document.querySelectorAll('ul')[0].addEventListener('click', (e) => {
+            if (e.target.nodeName === 'A') {
+                e.preventDefault();
+                alert(e.target.href)
+            }
+        })
+    </script>
+</body>
+
+</html>

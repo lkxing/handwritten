@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* header,
+        footer {
+            background-color: yellow;
+            grid-column-start: 1;
+            grid-column-end: 4;
+            grid-column: 1 / 4;
+        }
+
+        #app {
+            display: grid;
+            grid-template-rows: 50px calc(100vh - 100px) 50px;
+            grid-template-columns: 200px auto 200px;
+            grid: 50px calc(100vh - 100px) 50px / 200px auto 200px
+        } */
+
+        .left,
+        .right {
+            background-color: blue;
+        }
+
+        header {
+            grid-area: header;
+            background-color: yellow;
+        }
+
+        footer {
+            grid-area: footer;
+            background-color: yellow;
+        }
+
+        .left {
+            grid-area: left;
+        }
+
+        .main {
+            grid-area: main;
+        }
+
+        .right {
+            grid-area: right
+        }
+
+        #app {
+            display: grid;
+            grid: 50px calc(100vh - 100px) 50px / 200px auto 200px;
+            grid-template-areas: 'header header header''left main right''footer footer footer'
+        }
+
+
+        .main {
+            background-color: #eee;
+        }
+
+        ul {
+            list-style: none
+        }
+
+        li {
+            display: inline;
+        }
+
+        ul li:nth-of-type(2n)::after {
+            content: "|";
+        }
+    </style>
+</head>
+
+<body>
+    <div id='app'>
+        <header>头部</header>
+        <div class="left">左侧</div>
+        <div class="main">
+            <ul>
+                <li><a href='https://bilibili'>ddddd</a></li>
+                <li><a href='https://bilibili'>ddddd</a></li>
+                <li><a href='https://bilibili'>ddddd</a></li>
+                <br>
+                <li><a href='https://bilibili'>ddddd</a></li>
+                <li><a href='https://bilibili'>ddddd</a></li>
+            </ul>
+        </div>
+        <div class="right">右侧</div>
+        <footer>尾部</footer>
+    </div>
+
+    <script>
+        document.querySelectorAll('ul')[0].addEventListener('click', (e) => {
+            if (e.target.nodeName === 'A') {
+                e.preventDefault();
+                alert(e.target.href)
+            }
+        })
+    </script>
+</body>
+
+</html>

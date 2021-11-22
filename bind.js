@@ -92,6 +92,8 @@ bar.prototype.friend = "kevin";
 var bindFoo = bar.mybind(foo, "daisy");
 
 var obj = new bindFoo("18");
+
+
 // undefined
 // daisy
 // 18
